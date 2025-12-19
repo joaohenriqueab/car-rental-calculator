@@ -6,7 +6,7 @@ Car rental cost calculator in Python with full input validation.
 A simple Python program that calculates the total cost of renting a car based on the number of days rented and miles driven.
 
 ### Pricing
-- $10.00 per day
+- $16.00 per day
 - $0.10 per mile driven
 
 ### Features
