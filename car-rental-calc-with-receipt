@@ -1,0 +1,37 @@
+print("Welcome to the car rental calculator")
+
+PRICE_PER_MILE = 0.10
+PRICE_PER_DAY = 16
+
+while True:
+    try:
+        m = float(input("Please input the amount of miles you traveled: "))
+        d = float(input("Input the number of days the car was rented: "))
+
+        if m >= 0 and d > 0:
+            total = (PRICE_PER_DAY * d) + (PRICE_PER_MILE * m)
+            print(f"The total in dollars will be: US${total:.2f}")
+
+            while True:
+                receipt = input("Do you want the receipt? (Y/N): ").lower()
+
+                if receipt in ("y", "yes"):
+                    print("\n== Car rental receipt ==")
+                    print(f"Days rented: {d} x {PRICE_PER_DAY} = US${PRICE_PER_DAY * d:.2f}")
+                    print(f"Miles traveled: {m} x {PRICE_PER_MILE} = US${PRICE_PER_MILE * m:.2f}")
+                    print("-" * 30)
+                    print(f"The total is: US${total:.2f}")
+                    break
+
+                elif receipt in ("n", "no"):
+                    print("Okay. Thank you for using our services!")
+                    break
+                else:
+                    print("Invalid input. Please use Y or N.")
+
+            break
+        else:
+            print("Error. Days must be greater than zero and miles mustn't be negative.")
+
+    except ValueError:
+        print("Please input only numbers.")
